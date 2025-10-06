@@ -4,11 +4,11 @@ import herobg from '../../assets/books.jpg'
 const Banner = () => {
     return (
         <div className='w-10/12 mx-auto my-10'>
-            <div className="hero bg-base-200 p-20  rounded-2xl">
-  <div className="hero-content flex-col lg:flex-row-reverse gap-30">
+            <div className="hero bg-base-200 p-15  rounded-2xl">
+  <div className="hero-content flex-col lg:flex-row-reverse gap-20">
     <img
       src={herobg}
-      className="max-w-lg rounded-lg shadow-2xl"
+      className="w-lg rounded-lg shadow-2xl"
     />
 
     <div>
