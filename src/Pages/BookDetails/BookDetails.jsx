@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData, useParams } from 'react-router';
+import { addToStoreBooks } from '../../Utilities/Utilities';
 
 const BookDetails = () => {
     const {id}= useParams()
@@ -8,6 +9,11 @@ const BookDetails = () => {
     const singleBook = data.find( book => book.bookId === bookID )
     console.log(singleBook)
     const {image,author,bookName,category,publisher,rating,review,tags,totalPages,yearOfPublishing} = singleBook
+
+  const addToReadHandle=(id)=>{
+    addToStoreBooks(id);
+  }
+
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 w-10/12 mx-auto p-10 gap-10'>
             <div className=" bg-gray-100">
@@ -32,7 +38,7 @@ const BookDetails = () => {
                     <p>Rating :<span className='font-bold'> {rating}</span> </p>
                 </div>
                 <div className="mt-3">
-                <button className='btn mr-5'>Mark as Read</button>
+                <button onClick={()=>addToReadHandle(id)} className='btn mr-5'>Mark as Read</button>
                 <button className='btn'>Wishlist</button>
                 </div>
             </div>
